@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: bisque;
+    padding: 1em;
+}
+
+#centeringContainer{
+    display: flex;
+    justify-content: center;
+    background-image: url("/img/chairs2.jpg") ;
+    background-size: cover;
+
+    
+}
+
+  
+#searchContainer{
+    font-weight: bolder;
+    height: 20em;
+    margin-top: 7em;
+    margin-bottom: 7em;
+    padding: 3em;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 1%;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.253);
+
+}
+/*Form style underneath is heavily inspired by Lucas Oliveira*/
+/*From FreeFrontend. Link: https://freefrontend.com/css-input-text/ */
+/*Edited by me (Erlend Fjermestad Lunde)*/
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+
+}
+
+.form__field {
+    font-family: inherit;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding-right: 10em;
+    padding-bottom: 0.3em;
+    background-color: rgb(49, 49, 49);
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: white;
+}
+
+.form__field:focus{
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-color: white;
+    
+}
+.form__field:focus~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: white;
+    font-weight:700;    
+}
+
+
+/* reset input */
+
+.form__field:required{
+    box-shadow:none;
+}
+.form__field:invalid { 
+    box-shadow:none; 
+}
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*End of code heavily inspired by Lucas Oliveira*/
+
+button {
+    padding: 1em;
+    background: white;
+    color: black;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(85, 85, 85, 0.26);
+    border: none;
+}
+
+#hits{
+    display: grid;
+    grid-template-columns: 15% auto 15%;
+    grid-template-rows: repeat(auto-fit, 20em);
+    row-gap: 1em;
+    min-height: 100vh;
+    background-color: #E3E0E3;
+    padding-bottom: 10em;
+    margin-top: -0.5em;
+    
+}
+
+/*Selects all children of an element*/
+#hits > *{
+    margin-top: 2.5em;
+    margin-bottom: 2.5;
+    padding:1em;
+    list-style: none;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
+
+}
+span{
+    font-weight: 700
+}
+#hits >* >*{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: solid black 1px;
+}
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <title>PEP search</title>
+</head>
+<body>
+    {{>header}}
+    <div id="centeringContainer">
+        <div id="searchContainer">
+            <h1>{{title}}</h1>
+            <p>Type in a person’s name to search for them in databases containing politicians.
+                Note that the same person may appear in multiple databases
+            </p>
+            
+            <form class="form__group field">
+                
+                    <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                    <label for="name" class="form__label">Name</label>
+                    <button name="search" type="submit">&#128269</button>
+            
+            </form>
+
+            <p id="firstMessage"></p>
+        </div>
+    </div>
+    
+
+
+    <ul id="hits"></ul>
+    
+    <script src="/js/app.js"></script>
+</body>
+</html>
