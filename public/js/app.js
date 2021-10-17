@@ -21,7 +21,7 @@ dataForm.addEventListener("submit", (e)=>{
     firstMessage.textContent = "Searching..."
     
     const name = search.value
-    fetch("http://localhost:3000/asset?name=" + encodeURIComponent(name)).then((response)=>{
+    fetch("http://localhost:3000/pep?name=" + encodeURIComponent(name)).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 firstMessage.textContent = data.error

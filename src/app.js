@@ -38,8 +38,8 @@ app.get("/company",(req, res)=>{
     })
 })
 
-
-app.get("/asset",(req, res)=>{
+//For pep check
+app.get("/pep",(req, res)=>{
     if(!req.query.name){
         return res.send({
             error:"You must provide a name"
