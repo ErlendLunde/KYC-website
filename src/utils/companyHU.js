@@ -1,8 +1,8 @@
 const request = require("request")
 
-//Get company status 
-const getCompany = (orgNr, callback) =>{
-    const url = "https://stacc-code-challenge-2021.azurewebsites.net/api/enheter?orgNr=" + encodeURIComponent(orgNr)
+//Get company higher ups status 
+const getCompanyHU = (orgNr,callback)=>{
+    const url ="https://stacc-code-challenge-2021.azurewebsites.net/api/roller?orgNr="+ encodeURIComponent(orgNr)
     request({url:url, json:true}, (error, response)=>{
         if(error){
             callback("unable to connect to API", undefined)
@@ -10,7 +10,7 @@ const getCompany = (orgNr, callback) =>{
             callback(undefined, response)
         }
     })
+
 }
 
-
-module.exports = getCompany
+module.exports = getCompanyHU
