@@ -2,6 +2,7 @@ const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
 const getPep = require("./utils/pep.js")
+const getCompany = require("./utils/companyKYC.js")
 
 //Comment to test git
 
@@ -53,6 +54,22 @@ app.get("/pep",(req, res)=>{
         }
     })
 
+})
+
+//for company check
+app.get("/companySearch", (req, res)=>{
+    if(!req.query.orgNr){
+        return res.send({
+            error: "You must provide organisation number"
+        })
+    }
+    getCompany(req.query.orgNr, (error, data)=>{
+        if(error){
+            res.send(error)
+        }else{
+            res.send(data)
+        }
+    })
 })
 
 
