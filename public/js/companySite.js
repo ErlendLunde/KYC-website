@@ -5,12 +5,13 @@ const secondMessage = document.querySelector("#secondMessage")
 const orgArticle = document.querySelector("#orgArticle")
 const dataForm = document.querySelector("form")
 const search = document.querySelector("input")
-const orgNr = search.value
+
 
 let orgInfo = {}
 //const orgNr = "981078365"
 
 dataForm.addEventListener("submit", (e)=>{
+    const orgNr = search.value
     firstMessage.textContent = "Searching for company..."
     secondMessage.textContent = "Doing PEP check for management of company..."
     e.preventDefault()
