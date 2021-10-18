@@ -5,10 +5,12 @@ const getPep = require("./utils/pep.js")
 const getCompany = require("./utils/companyKYC.js")
 const getCompanyHU = require("./utils/companyHU.js")
 
-//Comment to test git
+
+
+const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for exspress
-const app = express()
 const publicDirPath = path.join(__dirname, "../public")
 const viewsPath = path.join(__dirname, "../templates/views")
 const partialsPath = path.join(__dirname, "../templates/partials")
@@ -98,6 +100,6 @@ app.get("*",(req, res)=>{
 })
 
 //STARTUP
-app.listen(3000, () => {
-    console.log("server is up on port 3000")
+app.listen(port, () => {
+    console.log("server is up on port " + port)
 })

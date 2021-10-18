@@ -26,7 +26,7 @@ dataForm.addEventListener("submit", (e)=>{
     console.log(search.value)
 
     //Get and render data about the company
-    fetch("http://localhost:3000/companySearch?orgNr=" + encodeURIComponent(orgNr)).then((response)=>{
+    fetch("/companySearch?orgNr=" + encodeURIComponent(orgNr)).then((response)=>{
         response.json().then((data)=>{
 
             if(data.error){
@@ -91,7 +91,7 @@ dataForm.addEventListener("submit", (e)=>{
             }
         })
     })
-    fetch("http://localhost:3000/companyHigerUps?orgNr=" + encodeURIComponent(orgNr)).then((response)=>{
+    fetch("/companyHigerUps?orgNr=" + encodeURIComponent(orgNr)).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 secondMessage.textContent = data.error
@@ -115,7 +115,7 @@ dataForm.addEventListener("submit", (e)=>{
                 employees = [...new Set(employees)]
                 //Continues with unique array
                 employees.forEach(element =>{
-                    fetch("http://localhost:3000/pep?name=" + encodeURIComponent(element)).then((response)=>{
+                    fetch("/pep?name=" + encodeURIComponent(element)).then((response)=>{
                         response.json().then((data)=>{
                             if(data.error){
                                 let personStatus = document.createElement("p")
