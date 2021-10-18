@@ -1,5 +1,3 @@
-console.log("client side javascript loaded")
-
 const firstMessage = document.querySelector("#firstMessage")
 const secondMessage = document.querySelector("#secondMessage")
 const orgArticle = document.querySelector("#orgArticle")
@@ -22,8 +20,7 @@ dataForm.addEventListener("submit", (e)=>{
     firstMessage.textContent = "Searching for company..."
     secondMessage.textContent = "Getting ready for PEP check"
     e.preventDefault()
-    console.log("search pressed")
-    console.log(search.value)
+
 
     //Get and render data about the company
     fetch("/companySearch?orgNr=" + encodeURIComponent(orgNr)).then((response)=>{
@@ -91,6 +88,7 @@ dataForm.addEventListener("submit", (e)=>{
             }
         })
     })
+    //Get data about manegement
     fetch("/companyHigerUps?orgNr=" + encodeURIComponent(orgNr)).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
@@ -102,7 +100,6 @@ dataForm.addEventListener("submit", (e)=>{
             else{
                 secondMessage.textContent = "PEP check on management may take up to a minute"
                 let employees  = []
-                console.log(data)
                 data.body.forEach(element => {
                     element.roller.forEach(roleElement =>{
                         if(roleElement.person){
@@ -123,8 +120,7 @@ dataForm.addEventListener("submit", (e)=>{
                                 pepArticle.appendChild(personStatus)
                             }
                             //Finds people who got a pep hit
-                            else{       
-                                console.log(element + " had "+ data.body.hits.length +" hits in PEP check")  
+                            else{        
                                 let personStatus = document.createElement("p")
                                 personStatus.className = classForRemoval
                                 //Mark the affected person with a special class
