@@ -11,7 +11,40 @@
 </head>
 <body>
     {{>header}}
+    <div id="centeringContainer">
+        <div id="searchContainer">
+            <h1>{{title}}</h1>
+            <p>
+                Type in an Organization number to preform a KYC check on a company including a PEP check on the management team
+            </p>
+                
+            <form class="form__group field">
+                
+                <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                <label for="name" class="form__label">Organization number</label>
+                <button name="search" type="submit">&#128269</button>
+            
+            </form>
 
+                <p id="firstMessage"></p>
+                <p id="secondMessage"></p>
+        </div>
+    </div>
+    
+    <section>
+        <h2>Company report</h2>
+        <article id="orgArticle">
+            <h3>Organization info</h3>
+            <p id="orgInfoMessage"></p>
+        </article>
+        <article id="pepArticle">
+            <h3>PEP result</h3>
+            <p id="orgInfoMessage"></p>
+        </article>
+    </section>
+
+
+    
 
     <script src="/js/companySite.js"></script>
 </body>
